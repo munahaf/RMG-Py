@@ -416,7 +416,7 @@ cdef class Troe(PDepKineticsModel):
             T2 = self.T2.value_si
             falloff = [A, T3, T1, T2]
 
-        ct_reaction.rate = self.to_cantera_kinetics(low_rate,high_rate,falloff)
+        ct_reaction.rate = self.to_cantera_kinetics(low_rate, high_rate, falloff)
 
     def to_cantera_kinetics(self, low, high, falloff):
         """
