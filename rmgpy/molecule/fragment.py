@@ -129,6 +129,9 @@ class CuttingLabel(Vertex):
     def is_surface_site(self):
         return False
 
+    def is_multidentate(self):
+        return False
+
     def is_silicon(self):
         return False
 
