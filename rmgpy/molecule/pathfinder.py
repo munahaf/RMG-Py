@@ -484,6 +484,7 @@ def is_atom_able_to_lose_lone_pair(atom):
 def find_adsorbate_delocalization_paths(atom1):
     """
     Find all multidentate adsorbates which have a bonding configuration X-C-C-X.
+
     Examples:
 
     - XCXC, XCHXCH, XCXCH, where X is the surface site. The adsorption site X is always placed on the left-hand side of
@@ -494,6 +495,7 @@ def find_adsorbate_delocalization_paths(atom1):
     cython.declare(paths=list, atom2=Vertex, atom3=Vertex, atom4=Vertex, bond12=Edge, bond23=Edge, bond34=Edge)
 
     path = []
+
     if atom1.is_surface_site():
         for atom2, bond12 in atom1.edges.items():
             if atom2.is_carbon():
@@ -508,6 +510,7 @@ def find_adsorbate_delocalization_paths(atom1):
 def find_adsorbate_conjugate_delocalization_paths(atom1):
     """
     Find all multidentate adsorbates which have a bonding configuration X-C-C-C-X.
+
     Examples:
 
     - XCHCHXCH/XCHCHXC, where X is the surface site. The adsorption site X is always placed on the left-hand side of
@@ -515,10 +518,10 @@ def find_adsorbate_conjugate_delocalization_paths(atom1):
 
     In this transition atom1 and atom5 are surface sites while atom2, atom3, and atom4 are carbon atoms.
     """
-
     cython.declare(paths=list, atom2=Vertex, atom3=Vertex, atom4=Vertex, atom5=Vertex, bond12=Edge, bond23=Edge, bond34=Edge, bond45=Edge)
 
     path = []
+
     if atom1.is_surface_site():
         for atom2, bond12 in atom1.edges.items():
             if atom2.is_carbon():

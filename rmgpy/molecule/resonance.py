@@ -1140,6 +1140,7 @@ def generate_adsorbate_shift_down_resonance_structures(mol):
     cython.declare(v1=Vertex, v2=Vertex)
 
     structures = []
+
     if mol.is_multidentate():
         for atom in mol.vertices:
             # print(atom)
@@ -1175,6 +1176,7 @@ def generate_adsorbate_shift_up_resonance_structures(mol):
     cython.declare(v1=Vertex, v2=Vertex)
 
     structures = []
+
     if mol.is_multidentate():
         for atom in mol.vertices:
             paths = pathfinder.find_adsorbate_delocalization_paths(atom)
@@ -1207,12 +1209,12 @@ def generate_adsorbate_conjugate_resonance_structures(mol):
     cython.declare(v1=Vertex, v2=Vertex)
 
     structures = []
+
     if mol.is_multidentate():
         for atom in mol.vertices:
             paths = pathfinder.find_adsorbate_conjugate_delocalization_paths(atom)
             for atom1, atom2, atom3, atom4, atom45, bond12, bond23, bond34, bond45 in paths:
-                if bond23.is_single():
-                    if (bond12.is_double() or bond12.is_triple()) and (bond34.is_double() or bond34.is_triple()) and (bond45.is_single() or bond45.is_double()):
+                    if (bond12.is_double() or bond12.is_triple()) and (bond23.is_single() or bond23.is_double()) and (bond34.is_double() or bond34.is_triple()) and (bond45.is_single() or bond45.is_double()):
                                 bond12.decrement_order()
                                 bond23.increment_order()
                                 bond34.decrement_order()
