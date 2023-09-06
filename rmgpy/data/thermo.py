@@ -1592,7 +1592,7 @@ class ThermoDatabase(object):
                 gas_phase_species = min(gas_phase_species_estimates, key=lowest_energy)
 
             thermo = gas_phase_species.thermo
-            thermo.comment = f"Gas phase thermo for {thermo.label or gas_phase_species.molecule[i].to_smiles()} from {thermo.comment}. Adsorption correction:"
+            thermo.comment = f"Gas phase thermo for {thermo.label or gas_phase_species.molecule[0].to_smiles()} from {thermo.comment}. Adsorption correction:"
             logging.debug("Using thermo from gas phase for species {}\n".format(gas_phase_species.label) + repr(thermo))
 
             if not isinstance(thermo, ThermoData):

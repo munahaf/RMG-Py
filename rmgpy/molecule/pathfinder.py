@@ -488,7 +488,7 @@ def find_adsorbate_delocalization_paths(atom1):
     Examples:
 
     - XCXC, XCHXCH, XCXCH, where X is the surface site. The adsorption site X is always placed on the left-hand side of
-    the adatom and every adatom is bonded to only one surface site X.
+      the adatom and every adatom is bonded to only one surface site X.
 
     In this transition atom1 and atom4 are surface sites while atom2 and atom3 are carbon atoms.
     """
@@ -514,7 +514,7 @@ def find_adsorbate_conjugate_delocalization_paths(atom1):
     Examples:
 
     - XCHCHXCH/XCHCHXC, where X is the surface site. The adsorption site X is always placed on the left-hand side of
-    the adatom and every adatom is bonded to only one surface site X.
+      the adatom and every adatom is bonded to only one surface site X.
 
     In this transition atom1 and atom5 are surface sites while atom2, atom3, and atom4 are carbon atoms.
     """
